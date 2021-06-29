@@ -11,25 +11,46 @@ export class PostListComponent implements OnInit {
   listOfPosts: Post[]=[
    new Post(
     'Pizza',
-    'qqqqqqqqqqqqqqqq',
+    `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus asperiores
+    accusantium nulla veritatis assumenda! Aperiam tempora vero a. Quo vero
+    commodi asperiores eos inventore ipsam obcaecati nihil numquam exercitationem
+    perferendis.`,
   'https://www.probash-mela.com/wp-content/uploads/2018/09/pizza.jpg',
   'raihan@test.com',
    new Date()
     ),
     new Post(
-      'Pizza2',
-      'qqqqqqqqqqqqqqqq',
-    'https://www.probash-mela.com/wp-content/uploads/2018/09/pizza.jpg',
+      'Indian Dessert',
+      `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus asperiores
+    accusantium nulla veritatis assumenda! Aperiam tempora vero a. Quo vero
+    commodi asperiores eos inventore ipsam obcaecati nihil numquam exercitationem
+    perferendis.`,
+    'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     'raihan@test.com',
      new Date()
       ),  
       new Post(
-        'Pizza3',
-        'qqqqqqqqqqqqqqqq',
-      'https://www.probash-mela.com/wp-content/uploads/2018/09/pizza.jpg',
+        'Butter Burger',
+        `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus asperiores
+        accusantium nulla veritatis assumenda! Aperiam tempora vero a. Quo vero
+        commodi asperiores eos inventore ipsam obcaecati nihil numquam exercitationem
+        perferendis`,
+      'https://www.localguidesconnect.com/t5/image/serverpage/image-id/598117iF7081563757AFAF2/image-size/medium?v=v2&px=400',
       'raihan@test.com',
        new Date()
         ),
+        new Post(
+          'Falooda',
+          `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus asperiores
+          accusantium nulla veritatis assumenda! Aperiam tempora vero a. Quo vero
+          commodi asperiores eos inventore ipsam obcaecati nihil numquam exercitationem
+          perferendis`,
+        'https://i.pinimg.com/originals/6e/e4/57/6ee4577a27dd1825b4261d511a0422fa.jpg',
+        'raihan@test.com',
+         new Date()
+          ),
+          
+
  
 ];
 

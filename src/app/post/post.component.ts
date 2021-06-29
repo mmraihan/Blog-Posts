@@ -7,7 +7,7 @@ import { Post } from '../post.model';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  @Input() post?:Post;
+  @Input() post?:Post; //receiving data from App_list-Component
 
   constructor() { }
 
