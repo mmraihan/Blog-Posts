@@ -11,15 +11,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes=[
   {
-    path: "post-list",
+    path: '',
+    redirectTo: '/post-list',
+    pathMatch: 'full',
+    
+  },
+  {
+    path: 'post-list',
     component: PostListComponent
   },
   {
-    path: "auth",
+    path: 'auth',
     component: AuthComponent
   },
   {
-    path: "post-add",
+    path: 'post-add',
     component: PostEditComponent
   }
 ];
