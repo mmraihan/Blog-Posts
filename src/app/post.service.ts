@@ -54,7 +54,7 @@ export class PostService {
   } 
 
   // 2nd Facility
-  deleteDelete(index: number){
+  deletePost(index: number){
       this.listOfPosts.splice(index, 1);
   }
   // 3rd Facility
