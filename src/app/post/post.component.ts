@@ -8,7 +8,8 @@ import { PostService } from '../post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  @Input() post?: Post; //receiving data from App_list-Component
+  @Input() post?: Post; //receiving data from App-list-Component
+  @Input() index: number=0;
   memberName="Sam";
 
   constructor(private postService: PostService) { } //Copnnecting component with service
@@ -17,7 +18,7 @@ export class PostComponent implements OnInit {
     console.log(this.post)
   }
   onDelete(){
-   this.postService.deletePost(0);
+   this.postService.deletePost(this.index);
   }
 
 
