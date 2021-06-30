@@ -16,7 +16,7 @@ export class PostEditComponent implements OnInit {
 
       title: new FormControl(null, [Validators.required]),
       description: new FormControl(null, [Validators.required]),
-      imagePath: new FormControl(null,),
+      imagePath: new FormControl(null,[Validators.required]),
     });
   }
 onSubmit(){
