@@ -55,7 +55,9 @@ export class PostEditComponent implements OnInit {
       description,
       imagePath,
       'test@test.com',
-      new Date()
+      new Date(),
+      0
+      
     );
 
     //calling service
