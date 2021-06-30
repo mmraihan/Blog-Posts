@@ -44,6 +44,8 @@ export class BackEndService {
 
 
   //Step 2.2-  Sendind Data from backe-end.service.ts To post.service.ts
+  this.postService.setPosts(listOfPosts);
+
       })
     ).subscribe();
   }

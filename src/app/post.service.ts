@@ -81,4 +81,10 @@ export class PostService {
  likePost(index: number){
    this.listOfPosts[index].numberOfLikes +=1;
  }
+
+ //7th Facility
+
+setPosts(listOfPosts: Post[]){
+  this.listOfPosts=listOfPosts;
+}
 }
