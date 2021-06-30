@@ -16,7 +16,11 @@ export class HeaderComponent implements OnInit {
   onSave(){
     console.log("working")
     this.backEndServive.savaData();
+  }
 
+  onFetch(){
+    console.log("On Fetch ")
+    this.backEndServive.fetchData();
   }
 
 }
