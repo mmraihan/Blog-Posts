@@ -11,29 +11,31 @@ import { PostService } from '../post.service';
 })
 export class PostEditComponent implements OnInit {
   form!: FormGroup;
-  index: number=0;
-  editMode=false;
+  index: number = 0;
+  editMode = false;
 
-
-
-  constructor(private postService: PostService, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private postService: PostService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    let title='';
-    let description='';
-    let imagePath= '';
+    let title = '';
+    let description = '';
+    let imagePath = '';
 
-    this.route.params.subscribe((params: Params)=>{
+    this.route.params.subscribe((params: Params) => {
       if (params['index']) {
         console.log(params['index']);
-        this.index=params['index'];
+        this.index = params['index'];
 
-       const post= this.postService.getPost(this.index);
-       title=post.title;
-       description=post.description;
-       imagePath=post.imagePath;
+        const post = this.postService.getPost(this.index);
+        title = post.title;
+        description = post.description;
+        imagePath = post.imagePath;
 
-       this.editMode=true;
+        this.editMode = true;
       }
     });
     this.form = new FormGroup({
@@ -48,7 +50,7 @@ export class PostEditComponent implements OnInit {
     const imagePath = this.form.value.imagePath;
 
     //Ready with object
-    const post: Post= new Post(
+    const post: Post = new Post(
       title,
       description,
       imagePath,
@@ -57,15 +59,13 @@ export class PostEditComponent implements OnInit {
     );
 
     //calling service
-    if (this.editMode) { 
-      this.postService.updatePost(this.index,post)
-    }else{
+    if (this.editMode) {
+      this.postService.updatePost(this.index, post);
+    } else {
       this.postService.addPost(post);
     }
-    
 
     // Navigate to /post-list
     this.router.navigate(['/post-list']);
-
   }
 }
