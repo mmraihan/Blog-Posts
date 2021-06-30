@@ -80,6 +80,5 @@ export class PostService {
  //6th Facility
  likePost(index: number){
    this.listOfPosts[index].numberOfLikes +=1;
-
  }
 }
