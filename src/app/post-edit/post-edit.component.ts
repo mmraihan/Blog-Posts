@@ -14,9 +14,9 @@ export class PostEditComponent implements OnInit {
   ngOnInit(): void {
     this.form=new FormGroup({
 
-      title: new FormControl(null, [Validators.required,Validators.maxLength(15)]),
-      description: new FormControl(null),
-      imagePath: new FormControl(null),
+      title: new FormControl(null, [Validators.required]),
+      description: new FormControl(null, [Validators.required]),
+      imagePath: new FormControl(null,),
     });
   }
 onSubmit(){
