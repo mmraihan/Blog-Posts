@@ -39,7 +39,7 @@ export class PostEditComponent implements OnInit {
     this.postService.addPost(post);
 
     // Navigate to /post-list
-    this.router.navigate(["/post-list"])
+    this.router.navigate(['/post-list']);
 
 
   }
