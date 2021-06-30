@@ -57,7 +57,12 @@ export class PostEditComponent implements OnInit {
     );
 
     //calling service
-    this.postService.addPost(post);
+    if (this.editMode) { 
+      this.postService.updatePost(this.index,post)
+    }else{
+      this.postService.addPost(post);
+    }
+    
 
     // Navigate to /post-list
     this.router.navigate(['/post-list']);
