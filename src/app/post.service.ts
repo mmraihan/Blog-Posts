@@ -68,5 +68,8 @@ export class PostService {
  updatePost(index: number, post: Post ){
      this.listOfPosts[index]=post;
  }
-
+ // 5th Facility
+ getPost(index: number){
+   return this.listOfPosts[index];
+ }
 }
