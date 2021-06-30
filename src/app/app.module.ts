@@ -9,29 +9,29 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { AuthComponent } from './auth/auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-const routes: Routes=[
+const routes: Routes = [
   {
     path: '',
     redirectTo: '/post-list',
     pathMatch: 'full',
-    
   },
   {
     path: 'post-list',
-    component: PostListComponent
+    component: PostListComponent,
   },
   {
     path: 'auth',
-    component: AuthComponent
+    component: AuthComponent,
   },
   {
     path: 'post-add',
-    component: PostEditComponent
+    component: PostEditComponent,
   },
   {
     path: 'post-edit/:index',
-    component: PostEditComponent
+    component: PostEditComponent,
   },
 ];
 
@@ -42,12 +42,15 @@ const routes: Routes=[
     PostListComponent,
     PostComponent,
     PostEditComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(routes), ReactiveFormsModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
