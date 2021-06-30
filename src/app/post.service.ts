@@ -90,6 +90,4 @@ setPosts(listOfPosts: Post[]){
   this.listChangedEvent.emit(listOfPosts);
 
 }
-
-
 }

@@ -3,8 +3,8 @@
   {{ post?.description }}
 </p>
 <img src="{{ post?.imagePath }}" class="img-responsive" />
-<p>Author:{{ post?.author }}</p>
-<p>Date:{{ post?.dateTimeCreated }}</p>
+<p>Author: {{ post?.author }}</p>
+<p>Date: {{ post?.dateTimeCreated | date }}</p>
 
 
 <a (click)="likePost()" class="btn btn-info btn-sm">
