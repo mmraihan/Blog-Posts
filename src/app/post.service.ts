@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Post } from './post.model';
 
 @Injectable({ providedIn: 'root' }) // Converted normoal class to service class, Identify service
 export class PostService {
+  listChangedEvent: EventEmitter <Post[]> = new EventEmitter();
   listOfPosts: Post[] = [
-    new Post(
+    /* new Post(
       'Pizza',
       `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus asperiores
          accusantium nulla veritatis assumenda! Aperiam tempora vero a. Quo vero
@@ -49,7 +50,7 @@ export class PostService {
       'raihan@test.com',
       new Date(),
       2
-    ),
+    ), */
   ];
 
   // 1st Facility
@@ -86,5 +87,9 @@ export class PostService {
 
 setPosts(listOfPosts: Post[]){
   this.listOfPosts=listOfPosts;
+  this.listChangedEvent.emit(listOfPosts);
+
 }
+
+
 }

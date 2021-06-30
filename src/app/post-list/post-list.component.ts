@@ -8,13 +8,14 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-list.component.css'],
 })
 export class PostListComponent implements OnInit {
-  listOfPosts: Post[] = [
-   
-  ];
+  listOfPosts: Post[] = [];
 
-  constructor(private postService : PostService) {} //Copnnecting component with service
+  constructor(private postService: PostService) {} //Copnnecting component with service
 
   ngOnInit(): void {
-    this.listOfPosts=this.postService.getPosts(); //Getting Post List from Post Service
+    this.listOfPosts = this.postService.getPosts();
+    this.postService.listChangedEvent.subscribe((listOfPosts: Post[]) => {
+      this.listOfPosts = this.postService.getPosts();
+    });
   }
 }
