@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from './post.model';
 import { PostService } from './post.service';
+import { tap } from 'rxjs/operators';
 
 /*
 Database Path  
@@ -13,7 +14,8 @@ https://blog-posts-86997-default-rtdb.firebaseio.com/
 export class BackEndService {
   constructor(private postService: PostService, private http: HttpClient) {}
 
-  // Fun 1 - Save
+
+                               // Fun 1 - Save
   savaData() {
     //Step 1.1- Get list of posts from post.service.ts
     const listOfPosts: Post[] = this.postService.getPosts();
@@ -27,5 +29,23 @@ export class BackEndService {
     });
   }
 
-  // Fun 2 - Save
+
+                                 // Func 2 - Save
+
+  fetchData(){
+
+  // Step 2.1-  Receiving data from Backend To back-end.service.ts
+
+    this.http.get<Post[]>(
+    'https://blog-posts-86997-default-rtdb.firebaseio.com/posts.json'
+      ).pipe(
+      tap((listOfPosts: Post[])=>{
+        console.log(listOfPosts);
+
+
+  //Step 2.2-  Sendind Data from backe-end.service.ts To post.service.ts
+      })
+    ).subscribe();
+  }
+
 }
