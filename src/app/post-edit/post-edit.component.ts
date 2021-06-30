@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Post } from '../post.model';
 import { PostService } from '../post.service';
 
@@ -11,7 +12,7 @@ import { PostService } from '../post.service';
 export class PostEditComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService, private router: Router) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -36,6 +37,10 @@ export class PostEditComponent implements OnInit {
 
     //calling service
     this.postService.addPost(post);
+
+    // Navigate to /post-list
+    this.router.navigate(["/post-list"])
+
 
   }
 }
