@@ -15,6 +15,7 @@
             <div class="form-group">
                 <label>Image Path</label>
                 <input class="form-control" type="text" formControlName="imagePath" />
+                <img class="img-responsive" src="{{ form.value.imagePath }}" >
             </div>
 
             <button class="btn btn-success" type="submit"[disabled]="form.invalid" >Save</button> |
